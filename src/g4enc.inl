@@ -266,7 +266,8 @@ int16_t x;
          break;
          }
       x += iLen;
-      *pDest++ = x;
+      if(x > 0)         /* Do not store zero run length */
+        *pDest++ = x;   /* it cause image color inverted */
       iLen = 0;
 doblack:
       i = bitcount[c]; /* Get consecutive bits */
