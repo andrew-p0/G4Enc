@@ -293,7 +293,7 @@ doblack:
          iLen += xborder; /* Make sure run length is not past end */
          break;
          }
-      x += iLen;
+      x = xsize;    // set run length at the image width
       *pDest++ = x;
       iLen = 0;
       } /* while */
